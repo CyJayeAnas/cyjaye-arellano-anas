@@ -136,4 +136,433 @@
             padding-top: 1rem;
         }
 
-        .profile
+        .profile-frame-home {
+            width: 320px;
+            height: 420px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            background-color: #e2e8f0;
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .profile-frame-home img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .home-container h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            letter-spacing: -1px;
+        }
+
+        .home-container p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* SECTION 2: PERSONAL INFORMATION */
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .personal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .profile-frame-bio {
+            width: 100%;
+            max-height: 500px;
+            aspect-ratio: 3/4;
+            border-radius: 40% 40% 40% 40% / 50% 50% 50% 50%;
+            background-color: #e2e8f0;
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .profile-frame-bio img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-left: 2px solid var(--border-color);
+            padding-left: 2rem;
+        }
+
+        .detail-item {
+            font-size: 1.05rem;
+        }
+
+        .detail-item span.label {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-right: 0.5rem;
+        }
+
+        .detail-item span.value {
+            font-weight: 500;
+        }
+
+        /* SECTION 3 & SUBPAGES: LISTINGS (Educational Backgrounds, Achievements, Friends) */
+        .list-section-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .row-item {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+
+        .row-frame {
+            width: 140px;
+            height: 140px;
+            flex-shrink: 0;
+            background-color: #e2e8f0;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .row-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .row-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .row-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* FAMILY & FRIENDS GRID SECTION */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        .card-frame {
+            width: 100%;
+            height: 320px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            background-color: #e2e8f0;
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-item h3 {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+        }
+
+        .card-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .personal-grid {
+                grid-template-columns: 1fr;
+            }
+            .row-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .details-list {
+                border-left: none;
+                border-top: 2px solid var(--border-color);
+                padding-left: 0;
+                padding-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <nav>
+            <button onclick="switchPage('homepage')" id="nav-homepage" class="active">Homepage</button>
+            <button onclick="switchPage('personal')" id="nav-personal">Personal Information</button>
+            <button onclick="switchPage('achievements')" id="nav-achievements">Achievements</button>
+            <button onclick="switchPage('family')" id="nav-family">Family & Friends</button>
+        </nav>
+    </header>
+
+    <!-- 1. HOMEPAGE -->
+    <section id="homepage" class="page-content active">
+        <div class="home-container">
+            <!-- 1/4 Sized Frame (Placeholder for image) -->
+            <div class="profile-frame-home">
+                <img src="image_aecab4.jpg" alt="CyJaye Anas">
+            </div>
+            <h1>CyJaye Anas</h1>
+            <p>Character Designer</p>
+        </div>
+    </section>
+
+    <!-- 2. PERSONAL INFORMATION -->
+    <section id="personal" class="page-content">
+        <div class="subpage-btn-container">
+            <button class="corner-nav-btn" onclick="switchPage('educational')">Educational Backgrounds</button>
+        </div>
+        <h2 class="page-title">Personal Details</h2>
+        <div class="personal-grid">
+            <!-- Smaller than 1/2 page frame -->
+            <div class="profile-frame-bio">
+                <img src="image_aec7ea.jpg" alt="CyJaye Arellano Anas">
+            </div>
+            <div class="details-list">
+                <div class="detail-item"><span class="label">Full Name:</span><span class="value">CyJaye Arellano Anas</span></div>
+                <div class="detail-item"><span class="label">Professional Title:</span><span class="value">Character Designer</span></div>
+                <div class="detail-item"><span class="label">Date of Birth:</span><span class="value">June 1, 2007</span></div>
+                <div class="detail-item"><span class="label">Nationality:</span><span class="value">Filipino</span></div>
+                <div class="detail-item"><span class="label">Civil Status:</span><span class="value">Single</span></div>
+                <div class="detail-item"><span class="label">Email Address:</span><span class="value">anascyjaye2025@gmail.com</span></div>
+                <div class="detail-item"><span class="label">Phone Number:</span><span class="value">09691619018</span></div>
+                <div class="detail-item"><span class="label">Hometown:</span><span class="value">La Trinidad, Benguet</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBPAGE: EDUCATIONAL BACKGROUNDS -->
+    <section id="educational" class="page-content">
+        <div class="subpage-btn-container">
+            <button class="corner-nav-btn" onclick="switchPage('family')">Family Backgrounds</button>
+        </div>
+        <h2 class="page-title">Educational Backgrounds</h2>
+        <div class="list-section-container">
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec7c9.jpg" alt="School 1"></div>
+                <div class="row-text">
+                    <h3>Puguis Elementary School</h3>
+                    <p>Elementary (2013-2016)</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec7c9.jpg" alt="School 2"></div>
+                <div class="row-text">
+                    <h3>Epiphany Christian Academy</h3>
+                    <p>Elementary (2016-2019) – Graduated with Honors</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec7c9.jpg" alt="School 3"></div>
+                <div class="row-text">
+                    <h3>Star Colleges Incorporated</h3>
+                    <p>Junior High School (2019-2023) – Graduated with Honors</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec7c9.jpg" alt="School 4"></div>
+                <div class="row-text">
+                    <h3>King's College of the Philippines</h3>
+                    <p>Senior High School (2023-2025) – Graduated with Honors</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec7c9.jpg" alt="School 5"></div>
+                <div class="row-text">
+                    <h3>University of the Cordilleras</h3>
+                    <p>Ongoing (College) – Enrolled in BMMA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ACHIEVEMENTS -->
+    <section id="achievements" class="page-content">
+        <h2 class="page-title">Achievements</h2>
+        <div class="list-section-container">
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec78f.jpg" alt="Achievement 1"></div>
+                <div class="row-text">
+                    <h3>Elementary Academic Achievements</h3>
+                    <p>Recognized with honors for sustained academic excellence and rigorous problem solving.</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec78f.jpg" alt="Achievement 2"></div>
+                <div class="row-text">
+                    <h3>JHS Academic Achievements</h3>
+                    <p>Overall 'With Honors' Graduate: A reflection of continuous hard work, discipline, and excellent performance.</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec78f.jpg" alt="Achievement 3"></div>
+                <div class="row-text">
+                    <h3>Work Immersion</h3>
+                    <p>Demonstrated workplace excellence with a final grade of 93 in Senior High School Work Immersion, proving execution and strong communication skills.</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec78f.jpg" alt="Achievement 4"></div>
+                <div class="row-text">
+                    <h3>Research Congress Participant</h3>
+                    <p>Conducted hands-on practical research and defended findings at the institutional Research Congress, achieving full certification.</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="row-frame"><img src="image_aec78f.jpg" alt="Achievement 5"></div>
+                <div class="row-text">
+                    <h3>SHS Graduate with Honors</h3>
+                    <p>Completed Senior High School with overall honors, demonstrating consistency and a strong work ethic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FAMILY & FRIENDS -->
+    <section id="family" class="page-content">
+        <div class="subpage-btn-container">
+            <button class="corner-nav-btn" onclick="switchPage('friends')">Friends</button>
+        </div>
+        <h2 class="page-title">Family Backgrounds</h2>
+        <div class="cards-grid">
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec76d.jpg" alt="Father"></div>
+                <h3>Father</h3>
+                <p>Abansi P. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec76d.jpg" alt="Mother"></div>
+                <h3>Mother</h3>
+                <p>Crisilda A. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec76d.jpg" alt="Mother"></div>
+                <h3>Mother</h3>
+                <p>Crisilda A. Anas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBPAGE: FRIENDS (6 Frames) -->
+    <section id="friends" class="page-content">
+        <div class="subpage-btn-container">
+            <button class="corner-nav-btn" onclick="switchPage('family')">Family</button>
+        </div>
+        <h2 class="page-title">Friends</h2>
+        <div class="cards-grid">
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 1"></div>
+                <h3>Father</h3>
+                <p>Abansi P. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 2"></div>
+                <h3>Father</h3>
+                <p>Abansi P. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 3"></div>
+                <h3>Father</h3>
+                <p>Abansi P. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 4"></div>
+                <h3>Father</h3>
+                <p>Abansi P. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 5"></div>
+                <h3>Father</h3>
+                <p>Abansi P. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 6"></div>
+                <h3>Father</h3>
+                <p>Abansi P. Anas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for smooth page/tab switching -->
+    <script>
+        function switchPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Remove active state from main navigation buttons
+            const navButtons = document.querySelectorAll('nav button');
+            navButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Show target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Highlight corresponding main nav button if applicable
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
