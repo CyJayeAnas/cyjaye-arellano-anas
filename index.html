@@ -32,21 +32,6 @@
             position: relative;
         }
 
-        /* Background Watermark/Illustration Style (Gwen Lol2.jpg at 10% opacity) */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('Gwen Lol2.jpg') no-repeat center center fixed;
-            background-size: cover;
-            opacity: 0.1;
-            pointer-events: none;
-            z-index: 0;
-        }
-
         /* Top Header & Navigation */
         header {
             border-bottom: 2px solid var(--border-color);
@@ -167,7 +152,60 @@
             color: var(--text-secondary);
         }
 
-        /* SECTION 1: HOMEPAGE (Larger Frame & Clean Layout) */
+        /* ROYAL & GRAND FRAME STYLING (Applied to all empty frames across the site) */
+        .profile-frame-home {
+            width: min(320px, 40vh);
+            height: min(420px, 52vh);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background-color: #f8fafc;
+            border: 4px double var(--border-color);
+            outline: 1px solid var(--border-color);
+            outline-offset: 4px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        }
+
+        .profile-frame-bio {
+            width: min(300px, 38vh);
+            height: min(390px, 48vh);
+            margin: 0 auto;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background-color: #f8fafc;
+            border: 4px double var(--border-color);
+            outline: 1px solid var(--border-color);
+            outline-offset: 4px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        }
+
+        .row-frame {
+            width: 78px;
+            height: 78px;
+            flex-shrink: 0;
+            background-color: #f8fafc;
+            border: 3px double var(--border-color);
+            outline: 1px solid var(--border-color);
+            outline-offset: 2px;
+            border-radius: 35% 65% 65% 35% / 35% 35% 65% 65%;
+        }
+
+        .card-frame {
+            width: min(210px, 24vh);
+            height: min(250px, 30vh);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background-color: #f8fafc;
+            border: 4px double var(--border-color);
+            outline: 1px solid var(--border-color);
+            outline-offset: 4px;
+            margin-bottom: 0.9rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .cards-grid.four-col .card-frame {
+            width: min(175px, 21vh);
+            height: min(215px, 26vh);
+        }
+
+        /* SECTION 1: HOMEPAGE */
         .home-container {
             flex: 1;
             display: flex;
@@ -175,16 +213,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-        }
-
-        .profile-frame-home {
-            width: min(320px, 40vh);
-            height: min(420px, 52vh);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            background-color: #f1f5f9;
-            border: 2px solid var(--border-color);
-            margin-bottom: 1.2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .home-container h1 {
@@ -209,15 +237,6 @@
             gap: 3rem;
             align-items: center;
             overflow: hidden;
-        }
-
-        .profile-frame-bio {
-            width: min(300px, 38vh);
-            height: min(390px, 48vh);
-            margin: 0 auto;
-            border-radius: 40% 40% 40% 40% / 50% 50% 50% 50%;
-            background-color: #f1f5f9;
-            border: 2px solid var(--border-color);
         }
 
         .details-list {
@@ -265,15 +284,6 @@
             display: none;
         }
 
-        .row-frame {
-            width: 78px;
-            height: 78px;
-            flex-shrink: 0;
-            background-color: #f1f5f9;
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-        }
-
         .row-text h3 {
             font-size: 1.08rem;
             margin-bottom: 0.25rem;
@@ -313,20 +323,6 @@
 
         .card-item.hidden-slide {
             display: none;
-        }
-
-        .card-frame {
-            width: min(210px, 24vh);
-            height: min(250px, 30vh);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            background-color: #f1f5f9;
-            border: 2px solid var(--border-color);
-            margin-bottom: 0.9rem;
-        }
-
-        .cards-grid.four-col .card-frame {
-            width: min(175px, 21vh);
-            height: min(215px, 26vh);
         }
 
         .card-item h3 {
@@ -474,7 +470,7 @@
     <section id="achievements" class="page-content">
         <div class="subpage-top-bar">
             <h2 class="page-title">Achievements</h2>
-            <button class="corner-nav-btn" onclick="switchPage('family')">Family & Friends &rarr;</button>
+            <div></div>
         </div>
         <div class="list-section-container" id="ach-list">
             <div class="row-item" data-slide="1">
