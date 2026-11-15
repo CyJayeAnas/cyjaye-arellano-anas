@@ -32,7 +32,7 @@
             position: relative;
         }
 
-        /* Background Watermark/Illustration Style */
+        /* Background Watermark/Illustration Style (Gwen Lol2.jpg at 10% opacity) */
         body::before {
             content: "";
             position: fixed;
@@ -40,7 +40,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.04"><text x="10" y="50" font-family="serif" font-size="20">✂</text></svg>');
+            background: url('Gwen Lol2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.1;
             pointer-events: none;
             z-index: 0;
         }
