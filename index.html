@@ -103,7 +103,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Subpage Header Button Styling (Matching Wix Screenshots top-right buttons) */
+        /* Subpage Header Button Styling */
         .subpage-btn-container {
             display: flex;
             justify-content: flex-end;
@@ -224,7 +224,7 @@
             font-weight: 500;
         }
 
-        /* SECTION 3 & SUBPAGES: LISTINGS (Educational Backgrounds, Achievements, Friends) */
+        /* SECTION 3 & SUBPAGES: LISTINGS */
         .list-section-container {
             display: flex;
             flex-direction: column;
@@ -352,7 +352,6 @@
     <!-- 1. HOMEPAGE -->
     <section id="homepage" class="page-content active">
         <div class="home-container">
-            <!-- 1/4 Sized Frame (Placeholder for image) -->
             <div class="profile-frame-home">
                 <img src="image_aecab4.jpg" alt="CyJaye Anas">
             </div>
@@ -368,7 +367,6 @@
         </div>
         <h2 class="page-title">Personal Details</h2>
         <div class="personal-grid">
-            <!-- Smaller than 1/2 page frame -->
             <div class="profile-frame-bio">
                 <img src="image_aec7ea.jpg" alt="CyJaye Arellano Anas">
             </div>
@@ -489,15 +487,10 @@
                 <h3>Mother</h3>
                 <p>Crisilda A. Anas</p>
             </div>
-            <div class="card-item">
-                <div class="card-frame"><img src="image_aec76d.jpg" alt="Mother"></div>
-                <h3>Mother</h3>
-                <p>Crisilda A. Anas</p>
-            </div>
         </div>
     </section>
 
-    <!-- SUBPAGE: FRIENDS (6 Frames) -->
+    <!-- SUBPAGE: FRIENDS -->
     <section id="friends" class="page-content">
         <div class="subpage-btn-container">
             <button class="corner-nav-btn" onclick="switchPage('family')">Family</button>
@@ -506,33 +499,13 @@
         <div class="cards-grid">
             <div class="card-item">
                 <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 1"></div>
-                <h3>Father</h3>
-                <p>Abansi P. Anas</p>
+                <h3>Friend</h3>
+                <p>Companion Name</p>
             </div>
             <div class="card-item">
                 <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 2"></div>
-                <h3>Father</h3>
-                <p>Abansi P. Anas</p>
-            </div>
-            <div class="card-item">
-                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 3"></div>
-                <h3>Father</h3>
-                <p>Abansi P. Anas</p>
-            </div>
-            <div class="card-item">
-                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 4"></div>
-                <h3>Father</h3>
-                <p>Abansi P. Anas</p>
-            </div>
-            <div class="card-item">
-                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 5"></div>
-                <h3>Father</h3>
-                <p>Abansi P. Anas</p>
-            </div>
-            <div class="card-item">
-                <div class="card-frame"><img src="image_aec72f.jpg" alt="Friend 6"></div>
-                <h3>Father</h3>
-                <p>Abansi P. Anas</p>
+                <h3>Friend</h3>
+                <p>Companion Name</p>
             </div>
         </div>
     </section>
@@ -540,21 +513,17 @@
     <!-- JavaScript for smooth page/tab switching -->
     <script>
         function switchPage(pageId) {
-            // Hide all pages
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => page.classList.remove('active'));
 
-            // Remove active state from main navigation buttons
             const navButtons = document.querySelectorAll('nav button');
             navButtons.forEach(btn => btn.classList.remove('active'));
 
-            // Show target page
             const targetPage = document.getElementById(pageId);
             if (targetPage) {
                 targetPage.classList.add('active');
             }
 
-            // Highlight corresponding main nav button if applicable
             const activeNav = document.getElementById('nav-' + pageId);
             if (activeNav) {
                 activeNav.classList.add('active');
