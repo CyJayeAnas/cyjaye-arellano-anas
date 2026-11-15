@@ -146,7 +146,7 @@
             cursor: not-allowed;
         }
 
-        /* Bottom Button Controls (For button-only pagination/navigation) */
+        /* Bottom Button Controls */
         .bottom-nav-controls {
             display: flex;
             justify-content: space-between;
@@ -239,7 +239,7 @@
             font-weight: 500;
         }
 
-        /* SECTION 3 & SUBPAGES: COMPACT LISTINGS (Fits 3 per page cleanly without scrolling) */
+        /* SECTION 3 & SUBPAGES: COMPACT LISTINGS */
         .list-section-container {
             flex: 1;
             display: flex;
@@ -283,7 +283,7 @@
             line-height: 1.4;
         }
 
-        /* FAMILY & FRIENDS GRID SECTION (Fits 3 or 4 per slide cleanly without scrolling) */
+        /* FAMILY & FRIENDS GRID SECTION */
         .cards-grid {
             flex: 1;
             display: grid;
@@ -339,7 +339,7 @@
             color: var(--text-primary);
         }
 
-        /* Mobile Fallback (Allows natural scrolling on small phones only) */
+        /* Mobile Fallback */
         @media (max-width: 768px) {
             body {
                 height: auto;
@@ -418,11 +418,11 @@
         </div>
     </section>
 
-    <!-- SUBPAGE: EDUCATIONAL BACKGROUNDS (Button-paginated: 3 per view, zero scrolling) -->
+    <!-- SUBPAGE: EDUCATIONAL BACKGROUNDS -->
     <section id="educational" class="page-content">
         <div class="subpage-top-bar">
             <h2 class="page-title">Educational Backgrounds</h2>
-            <button class="corner-nav-btn" onclick="switchPage('family')">Family Backgrounds &rarr;</button>
+            <button class="corner-nav-btn" onclick="switchPage('personal')">&larr; Personal Information</button>
         </div>
         <div class="list-section-container" id="edu-list">
             <div class="row-item" data-slide="1">
@@ -468,7 +468,7 @@
         </div>
     </section>
 
-    <!-- 3. ACHIEVEMENTS (Button-paginated: 3 per view, zero scrolling) -->
+    <!-- 3. ACHIEVEMENTS -->
     <section id="achievements" class="page-content">
         <div class="subpage-top-bar">
             <h2 class="page-title">Achievements</h2>
@@ -518,7 +518,7 @@
         </div>
     </section>
 
-    <!-- 4. FAMILY & FRIENDS (3 side-by-side cards, zero scrolling) -->
+    <!-- 4. FAMILY & FRIENDS -->
     <section id="family" class="page-content">
         <div class="subpage-top-bar">
             <h2 class="page-title">Family Backgrounds</h2>
@@ -548,7 +548,7 @@
         </div>
     </section>
 
-    <!-- SUBPAGE: FRIENDS (8 Frames Total, paginated 4 per slide via buttons so zero scrolling) -->
+    <!-- SUBPAGE: FRIENDS -->
     <section id="friends" class="page-content">
         <div class="subpage-top-bar">
             <h2 class="page-title">Friends</h2>
@@ -620,7 +620,6 @@
                 targetPage.classList.add('active');
             }
 
-            // Highlight main nav button (including parent tab for subpages)
             const navMap = {
                 homepage: 'nav-homepage',
                 personal: 'nav-personal',
