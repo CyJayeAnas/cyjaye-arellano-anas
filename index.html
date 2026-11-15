@@ -248,8 +248,8 @@
         /* FAMILY & FRIENDS GRID SECTION */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .card-item {
@@ -265,7 +265,7 @@
 
         .card-frame {
             width: 100%;
-            height: 320px;
+            height: 300px;
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             background-color: #f1f5f9;
             border: 2px solid var(--border-color);
@@ -367,133 +367,4 @@
                 </div>
             </div>
             <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>Star Colleges Incorporated</h3>
-                    <p>Junior High School (2019-2023) – Graduated with Honors</p>
-                </div>
-            </div>
-            <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>King's College of the Philippines</h3>
-                    <p>Senior High School (2023-2025) – Graduated with Honors</p>
-                </div>
-            </div>
-            <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>University of the Cordilleras</h3>
-                    <p>Ongoing (College) – Enrolled in BMMA</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. ACHIEVEMENTS -->
-    <section id="achievements" class="page-content">
-        <h2 class="page-title">Achievements</h2>
-        <div class="list-section-container">
-            <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>Elementary Academic Achievements</h3>
-                    <p>Recognized with honors for sustained academic excellence and rigorous problem solving.</p>
-                </div>
-            </div>
-            <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>JHS Academic Achievements</h3>
-                    <p>Overall 'With Honors' Graduate: A reflection of continuous hard work, discipline, and excellent performance.</p>
-                </div>
-            </div>
-            <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>Work Immersion</h3>
-                    <p>Demonstrated workplace excellence with a final grade of 93 in Senior High School Work Immersion, proving execution and strong communication skills.</p>
-                </div>
-            </div>
-            <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>Research Congress Participant</h3>
-                    <p>Conducted hands-on practical research and defended findings at the institutional Research Congress, achieving full certification.</p>
-                </div>
-            </div>
-            <div class="row-item">
-                <div class="row-frame"></div>
-                <div class="row-text">
-                    <h3>SHS Graduate with Honors</h3>
-                    <p>Completed Senior High School with overall honors, demonstrating consistency and a strong work ethic.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. FAMILY & FRIENDS -->
-    <section id="family" class="page-content">
-        <div class="subpage-btn-container">
-            <button class="corner-nav-btn" onclick="switchPage('friends')">Friends</button>
-        </div>
-        <h2 class="page-title">Family Backgrounds</h2>
-        <div class="cards-grid">
-            <div class="card-item">
-                <div class="card-frame"></div>
-                <h3>Father</h3>
-                <p>Abansi P. Anas</p>
-            </div>
-            <div class="card-item">
-                <div class="card-frame"></div>
-                <h3>Mother</h3>
-                <p>Crisilda A. Anas</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SUBPAGE: FRIENDS -->
-    <section id="friends" class="page-content">
-        <div class="subpage-btn-container">
-            <button class="corner-nav-btn" onclick="switchPage('family')">Family</button>
-        </div>
-        <h2 class="page-title">Friends</h2>
-        <div class="cards-grid">
-            <div class="card-item">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-            <div class="card-item">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- JavaScript for smooth page/tab switching -->
-    <script>
-        function switchPage(pageId) {
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => page.classList.remove('active'));
-
-            const navButtons = document.querySelectorAll('nav button');
-            navButtons.forEach(btn => btn.classList.remove('active'));
-
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
-
-            const activeNav = document.getElementById('nav-' + pageId);
-            if (activeNav) {
-                activeNav.classList.add('active');
-            }
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-
-</body>
-</html>
+                <div class="row
