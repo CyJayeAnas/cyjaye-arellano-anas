@@ -205,6 +205,11 @@
             margin-bottom: 0.9rem;
         }
 
+        #family .card-frame {
+            width: min(230px, 27vh);
+            height: min(275px, 33vh);
+        }
+
         .cards-grid.four-col .card-frame {
             width: min(175px, 21vh);
             height: min(215px, 26vh);
@@ -310,6 +315,12 @@
             align-items: center;
         }
 
+        #family .cards-grid {
+            grid-template-columns: repeat(2, minmax(260px, 340px));
+            justify-content: center;
+            gap: 3rem;
+        }
+
         .cards-grid.four-col {
             grid-template-columns: repeat(4, 1fr);
             gap: 1.2rem;
@@ -324,6 +335,10 @@
             padding: 1.1rem;
             border: 1px solid rgba(0,0,0,0.08);
             border-radius: 12px;
+        }
+
+        #family .card-item {
+            padding: 1.5rem;
         }
 
         .card-item.hidden-slide {
@@ -354,7 +369,7 @@
                 overflow: visible;
                 padding: 2rem 5%;
             }
-            .personal-grid, .cards-grid, .cards-grid.four-col {
+            .personal-grid, .cards-grid, #family .cards-grid, .cards-grid.four-col {
                 grid-template-columns: 1fr;
             }
             .row-item {
@@ -517,7 +532,7 @@
         </div>
     </section>
 
-    <!-- 4. FAMILY & FRIENDS (Bottom-left button removed) -->
+    <!-- 4. FAMILY & FRIENDS -->
     <section id="family" class="page-content">
         <div class="subpage-top-bar">
             <h2 class="page-title">Family Backgrounds</h2>
