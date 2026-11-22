@@ -167,16 +167,29 @@
             color: var(--text-secondary);
         }
 
-        /* ORIGINAL FRAME STYLING */
+        /* HOMEPAGE FRAME: Soft arch silhouette tailored to display homepage.jpg without harsh corner clipping */
         .profile-frame-home {
-            width: min(320px, 40vh);
-            height: min(420px, 52vh);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            width: min(330px, 41vh);
+            height: min(415px, 51vh);
+            border-radius: 170px 170px 24px 24px;
             background-color: #f1f5f9;
             border: 2px solid var(--border-color);
-            margin-bottom: 1.2rem;
+            padding: 6px;
+            margin-bottom: 1.15rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-frame-home img {
+            width: 100%;
+            height: 100%;
+            border-radius: 162px 162px 18px 18px;
+            object-fit: cover;
+            object-position: center 18%;
+            display: block;
         }
 
         .profile-frame-bio {
@@ -236,7 +249,6 @@
             height: min(430px, 53vh);
         }
 
-        .profile-frame-home img,
         .profile-frame-bio img,
         .row-frame img,
         .card-frame img {
@@ -458,6 +470,10 @@
                 overflow: visible;
                 padding: 2rem 5%;
             }
+            .profile-frame-home {
+                width: 260px;
+                height: 330px;
+            }
             .personal-grid, .cards-grid, #family .cards-grid {
                 grid-template-columns: 1fr;
             }
@@ -503,7 +519,9 @@
     <!-- 1. HOMEPAGE -->
     <section id="homepage" class="page-content active">
         <div class="home-container">
-            <div class="profile-frame-home"></div>
+            <div class="profile-frame-home">
+                <img src="homepage.jpg" alt="CyJaye Anas">
+            </div>
             <h1>CyJaye Anas</h1>
             <p>Character Designer</p>
         </div>
