@@ -210,9 +210,22 @@
             height: min(275px, 33vh);
         }
 
-        .cards-grid.four-col .card-frame {
-            width: min(175px, 21vh);
-            height: min(215px, 26vh);
+        .selfie-frame {
+            width: min(680px, 78vw);
+            height: min(410px, 52vh);
+            background-color: #f1f5f9;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 1rem;
+        }
+
+        .selfie-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* SECTION 1: HOMEPAGE */
@@ -321,9 +334,40 @@
             gap: 3rem;
         }
 
-        .cards-grid.four-col {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.2rem;
+        .friends-showcase {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .friends-slide-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 1.25rem 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        .friends-slide-card.hidden-slide {
+            display: none;
+        }
+
+        .friends-slide-card h3 {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+        }
+
+        .friends-slide-card p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
         }
 
         .card-item {
@@ -369,8 +413,12 @@
                 overflow: visible;
                 padding: 2rem 5%;
             }
-            .personal-grid, .cards-grid, #family .cards-grid, .cards-grid.four-col {
+            .personal-grid, .cards-grid, #family .cards-grid {
                 grid-template-columns: 1fr;
+            }
+            .selfie-frame {
+                width: 100%;
+                height: 240px;
             }
             .row-item {
                 flex-direction: column;
@@ -563,52 +611,22 @@
             <h2 class="page-title">Friends</h2>
             <button class="corner-nav-btn" onclick="switchPage('family')">&larr; Family</button>
         </div>
-        <div class="cards-grid four-col" id="fri-list">
-            <div class="card-item" data-slide="1">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
+        <div class="friends-showcase" id="fri-list">
+            <div class="friends-slide-card" data-slide="1">
+                <div class="selfie-frame"></div>
+                <h3>Group Selfie</h3>
+                <p>Friends — Page 1</p>
             </div>
-            <div class="card-item" data-slide="1">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-            <div class="card-item" data-slide="1">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-            <div class="card-item" data-slide="1">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-            <div class="card-item hidden-slide" data-slide="2">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-            <div class="card-item hidden-slide" data-slide="2">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-            <div class="card-item hidden-slide" data-slide="2">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
-            </div>
-            <div class="card-item hidden-slide" data-slide="2">
-                <div class="card-frame"></div>
-                <h3>Friend</h3>
-                <p>Companion Name</p>
+            <div class="friends-slide-card hidden-slide" data-slide="2">
+                <div class="selfie-frame"></div>
+                <h3>Group Selfie</h3>
+                <p>Friends — Page 2</p>
             </div>
         </div>
         <div class="bottom-nav-controls">
-            <button class="pager-btn" id="fri-prev" onclick="changeSlide('fri', -1)" disabled>&larr; Previous Friends</button>
-            <span class="page-indicator" id="fri-indicator">Page 1 of 2 (1–4 of 8)</span>
-            <button class="pager-btn" id="fri-next" onclick="changeSlide('fri', 1)">Next Friends (5–8) &rarr;</button>
+            <button class="pager-btn" id="fri-prev" onclick="changeSlide('fri', -1)" disabled>&larr; Previous Photo</button>
+            <span class="page-indicator" id="fri-indicator">Page 1 of 2</span>
+            <button class="pager-btn" id="fri-next" onclick="changeSlide('fri', 1)">Next Photo &rarr;</button>
         </div>
     </section>
 
@@ -663,11 +681,7 @@
             document.getElementById(sectionKey + '-next').disabled = (nextSlide === maxSlides[sectionKey]);
 
             const indicator = document.getElementById(sectionKey + '-indicator');
-            if (sectionKey === 'fri') {
-                indicator.textContent = nextSlide === 1 ? 'Page 1 of 2 (1–4 of 8)' : 'Page 2 of 2 (5–8 of 8)';
-            } else {
-                indicator.textContent = `Page ${nextSlide} of ${maxSlides[sectionKey]}`;
-            }
+            indicator.textContent = `Page ${nextSlide} of ${maxSlides[sectionKey]}`;
         }
     </script>
 
