@@ -209,11 +209,13 @@
             overflow: hidden;
         }
 
+        /* Enlarged Family Backgrounds frames */
         #family .card-frame {
-            width: min(230px, 27vh);
-            height: min(275px, 33vh);
+            width: min(310px, 37vh);
+            height: min(365px, 44vh);
         }
 
+        /* Default Friends selfie frame (used by Page 2) */
         .selfie-frame {
             width: min(680px, 78vw);
             height: min(410px, 52vh);
@@ -225,6 +227,12 @@
             margin-bottom: 1rem;
         }
 
+        /* Enlarged Friends Page 1 selfie frame */
+        .friends-slide-card[data-slide="1"] .selfie-frame {
+            width: min(880px, 86vw);
+            height: min(490px, 60vh);
+        }
+
         .profile-frame-home img,
         .profile-frame-bio img,
         .row-frame img,
@@ -233,6 +241,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 20%;
             display: block;
         }
 
@@ -337,9 +346,9 @@
         }
 
         #family .cards-grid {
-            grid-template-columns: repeat(2, minmax(260px, 340px));
+            grid-template-columns: repeat(2, minmax(310px, 410px));
             justify-content: center;
-            gap: 3rem;
+            gap: 3.5rem;
         }
 
         .friends-showcase {
@@ -356,7 +365,7 @@
             align-items: center;
             text-align: center;
             background: var(--card-bg);
-            padding: 1.25rem 1.5rem;
+            padding: 1.1rem 1.35rem;
             border: 1px solid rgba(0,0,0,0.08);
             border-radius: 12px;
         }
@@ -390,7 +399,7 @@
         }
 
         #family .card-item {
-            padding: 1.5rem;
+            padding: 1.25rem 1.5rem;
         }
 
         .card-item.hidden-slide {
@@ -424,7 +433,8 @@
             .personal-grid, .cards-grid, #family .cards-grid {
                 grid-template-columns: 1fr;
             }
-            .selfie-frame {
+            .selfie-frame,
+            .friends-slide-card[data-slide="1"] .selfie-frame {
                 width: 100%;
                 height: 240px;
             }
