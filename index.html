@@ -167,11 +167,13 @@
             color: var(--text-secondary);
         }
 
-        /* HOMEPAGE FRAME: Soft arch silhouette tailored to display homepage.jpg without harsh corner clipping */
+        /* HOMEPAGE FRAME: Adapts tightly to homepage.jpg's exact aspect ratio so 100% of the image is visible */
         .profile-frame-home {
-            width: min(330px, 41vh);
-            height: min(415px, 51vh);
-            border-radius: 170px 170px 24px 24px;
+            width: fit-content;
+            max-width: min(640px, 82vw);
+            height: auto;
+            max-height: min(440px, 54vh);
+            border-radius: 24px;
             background-color: #f1f5f9;
             border: 2px solid var(--border-color);
             padding: 6px;
@@ -184,11 +186,12 @@
         }
 
         .profile-frame-home img {
-            width: 100%;
-            height: 100%;
-            border-radius: 162px 162px 18px 18px;
-            object-fit: cover;
-            object-position: center 18%;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: calc(min(440px, 54vh) - 16px);
+            border-radius: 18px;
+            object-fit: contain;
             display: block;
         }
 
@@ -471,8 +474,11 @@
                 padding: 2rem 5%;
             }
             .profile-frame-home {
-                width: 260px;
-                height: 330px;
+                max-width: 90vw;
+                max-height: 360px;
+            }
+            .profile-frame-home img {
+                max-height: 344px;
             }
             .personal-grid, .cards-grid, #family .cards-grid {
                 grid-template-columns: 1fr;
