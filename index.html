@@ -167,12 +167,12 @@
             color: var(--text-secondary);
         }
 
-        /* HOMEPAGE FRAME: Fits 100% of homepage.jpg inside a balanced editorial split layout */
+        /* HOMEPAGE FRAME: Slightly larger uncropped frame inside balanced split layout */
         .profile-frame-home {
             width: fit-content;
-            max-width: min(560px, 48vw);
+            max-width: min(630px, 53vw);
             height: auto;
-            max-height: min(520px, 66vh);
+            max-height: min(575px, 72vh);
             border-radius: 20px;
             background-color: #ffffff;
             border: 2px solid var(--border-color);
@@ -189,7 +189,7 @@
             width: auto;
             height: auto;
             max-width: 100%;
-            max-height: calc(min(520px, 66vh) - 18px);
+            max-height: calc(min(575px, 72vh) - 18px);
             border-radius: 13px;
             object-fit: contain;
             display: block;
@@ -279,7 +279,7 @@
             gap: 3.5rem;
             align-items: center;
             justify-content: center;
-            max-width: 1040px;
+            max-width: 1120px;
             width: 100%;
             margin: 0 auto;
             padding: 0 1rem;
@@ -317,13 +317,6 @@
             font-size: 1.1rem;
             font-weight: 500;
             color: var(--text-secondary);
-            margin-bottom: 1.4rem;
-        }
-
-        .home-actions {
-            display: flex;
-            gap: 0.85rem;
-            flex-wrap: wrap;
         }
 
         /* SECTION 2: PERSONAL INFORMATION */
@@ -511,11 +504,11 @@
             }
             .profile-frame-home {
                 justify-self: center;
-                max-width: 90vw;
-                max-height: 360px;
+                max-width: 92vw;
+                max-height: 400px;
             }
             .profile-frame-home img {
-                max-height: 342px;
+                max-height: 382px;
             }
             .home-intro {
                 align-items: center;
@@ -527,9 +520,6 @@
             }
             .home-intro h1 {
                 font-size: 2.35rem;
-            }
-            .home-actions {
-                justify-content: center;
             }
             .personal-grid, .cards-grid, #family .cards-grid {
                 grid-template-columns: 1fr;
@@ -583,10 +573,6 @@
                 <span class="home-eyebrow">Portfolio</span>
                 <h1>CyJaye Anas</h1>
                 <p class="role-subtitle">Character Designer</p>
-                <div class="home-actions">
-                    <button class="corner-nav-btn" onclick="switchPage('personal')">Personal Details &rarr;</button>
-                    <button class="corner-nav-btn" onclick="switchPage('achievements')">Achievements &rarr;</button>
-                </div>
             </div>
         </div>
         <div class="bottom-nav-controls">
