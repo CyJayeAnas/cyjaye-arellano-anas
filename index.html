@@ -176,6 +176,7 @@
             border: 2px solid var(--border-color);
             margin-bottom: 1.2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
         }
 
         .profile-frame-bio {
@@ -185,6 +186,7 @@
             border-radius: 40% 40% 40% 40% / 50% 50% 50% 50%;
             background-color: #f1f5f9;
             border: 2px solid var(--border-color);
+            overflow: hidden;
         }
 
         .row-frame {
@@ -194,6 +196,7 @@
             background-color: #f1f5f9;
             border: 1px solid var(--border-color);
             border-radius: 50%;
+            overflow: hidden;
         }
 
         .card-frame {
@@ -203,6 +206,7 @@
             background-color: #f1f5f9;
             border: 2px solid var(--border-color);
             margin-bottom: 0.9rem;
+            overflow: hidden;
         }
 
         #family .card-frame {
@@ -221,6 +225,10 @@
             margin-bottom: 1rem;
         }
 
+        .profile-frame-home img,
+        .profile-frame-bio img,
+        .row-frame img,
+        .card-frame img,
         .selfie-frame img {
             width: 100%;
             height: 100%;
@@ -465,7 +473,9 @@
             <button class="corner-nav-btn" onclick="switchPage('educational')">Educational Backgrounds &rarr;</button>
         </div>
         <div class="personal-grid">
-            <div class="profile-frame-bio"></div>
+            <div class="profile-frame-bio">
+                <img src="received_2184177598718960.jpeg" alt="CyJaye Arellano Anas">
+            </div>
             <div class="details-list">
                 <div class="detail-item"><span class="label">Full Name:</span><span class="value">CyJaye Arellano Anas</span></div>
                 <div class="detail-item"><span class="label">Professional Title:</span><span class="value">Character Designer</span></div>
@@ -488,35 +498,45 @@
         </div>
         <div class="list-section-container" id="edu-list">
             <div class="row-item" data-slide="1">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="puguis.jpg" alt="Puguis Elementary School">
+                </div>
                 <div class="row-text">
                     <h3>Puguis Elementary School</h3>
                     <p>Elementary (2013–2016)</p>
                 </div>
             </div>
             <div class="row-item" data-slide="1">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="eca.png" alt="Epiphany Christian Academy">
+                </div>
                 <div class="row-text">
                     <h3>Epiphany Christian Academy</h3>
                     <p>Elementary (2016–2019) – Graduated with Honors</p>
                 </div>
             </div>
             <div class="row-item" data-slide="1">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="starcolleges.png" alt="Star Colleges Incorporated">
+                </div>
                 <div class="row-text">
                     <h3>Star Colleges Incorporated</h3>
                     <p>Junior High School (2019–2023) – Graduated with Honors</p>
                 </div>
             </div>
             <div class="row-item hidden-slide" data-slide="2">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="kingscollege.jpg" alt="King's College of the Philippines">
+                </div>
                 <div class="row-text">
                     <h3>King's College of the Philippines</h3>
                     <p>Senior High School (2023–2025) – Graduated with Honors</p>
                 </div>
             </div>
             <div class="row-item hidden-slide" data-slide="2">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="uc.jpg" alt="University of the Cordilleras">
+                </div>
                 <div class="row-text">
                     <h3>University of the Cordilleras</h3>
                     <p>Ongoing (College) – Enrolled in BMMA</p>
@@ -538,35 +558,45 @@
         </div>
         <div class="list-section-container" id="ach-list">
             <div class="row-item" data-slide="1">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="elementary6.jpg" alt="Elementary Academic Achievements">
+                </div>
                 <div class="row-text">
                     <h3>Elementary Academic Achievements</h3>
                     <p>Recognized with honors for sustained academic excellence and rigorous problem solving.</p>
                 </div>
             </div>
             <div class="row-item" data-slide="1">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="starcolleges.jpg" alt="JHS Academic Achievements">
+                </div>
                 <div class="row-text">
                     <h3>JHS Academic Achievements</h3>
                     <p>Overall 'With Honors' Graduate: A reflection of continuous hard work, discipline, and excellent performance.</p>
                 </div>
             </div>
             <div class="row-item" data-slide="1">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="workimmersion1.jpg" alt="Work Immersion">
+                </div>
                 <div class="row-text">
                     <h3>Work Immersion</h3>
                     <p>Demonstrated workplace excellence with a final grade of 93 in Senior High School Work Immersion, proving execution and strong communication skills.</p>
                 </div>
             </div>
             <div class="row-item hidden-slide" data-slide="2">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="research.jpg" alt="Research Congress Participant">
+                </div>
                 <div class="row-text">
                     <h3>Research Congress Participant</h3>
                     <p>Conducted hands-on practical research and defended findings at the institutional Research Congress, achieving full certification.</p>
                 </div>
             </div>
             <div class="row-item hidden-slide" data-slide="2">
-                <div class="row-frame"></div>
+                <div class="row-frame">
+                    <img src="kingscollegeshsgraduate.jpg" alt="SHS Graduate with Honors">
+                </div>
                 <div class="row-text">
                     <h3>SHS Graduate with Honors</h3>
                     <p>Completed Senior High School with overall honors, demonstrating consistency and a strong work ethic.</p>
@@ -588,12 +618,16 @@
         </div>
         <div class="cards-grid">
             <div class="card-item">
-                <div class="card-frame"></div>
+                <div class="card-frame">
+                    <img src="father.jpg" alt="Abansi P. Anas">
+                </div>
                 <h3>Father</h3>
                 <p>Abansi P. Anas</p>
             </div>
             <div class="card-item">
-                <div class="card-frame"></div>
+                <div class="card-frame">
+                    <img src="mother.jpg" alt="Crisilda A. Anas">
+                </div>
                 <h3>Mother</h3>
                 <p>Crisilda A. Anas</p>
             </div>
@@ -613,12 +647,16 @@
         </div>
         <div class="friends-showcase" id="fri-list">
             <div class="friends-slide-card" data-slide="1">
-                <div class="selfie-frame"></div>
+                <div class="selfie-frame">
+                    <img src="boyfriend&company(eme).jpeg" alt="Friends Group Selfie 1">
+                </div>
                 <h3>Group Selfie</h3>
                 <p>Friends — Page 1</p>
             </div>
             <div class="friends-slide-card hidden-slide" data-slide="2">
-                <div class="selfie-frame"></div>
+                <div class="selfie-frame">
+                    <img src="firstcofever.jpeg" alt="Friends Group Selfie 2">
+                </div>
                 <h3>Group Selfie</h3>
                 <p>Friends — Page 2</p>
             </div>
