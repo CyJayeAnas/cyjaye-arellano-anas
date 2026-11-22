@@ -209,10 +209,11 @@
             overflow: hidden;
         }
 
-        /* Enlarged Family Backgrounds frames */
+        /* Wider rectangular Family Backgrounds frames */
         #family .card-frame {
-            width: min(310px, 37vh);
-            height: min(365px, 44vh);
+            width: min(410px, 44vw);
+            height: min(295px, 36vh);
+            border-radius: 16px;
         }
 
         /* Default Friends selfie frame (used by Page 2) */
@@ -346,9 +347,9 @@
         }
 
         #family .cards-grid {
-            grid-template-columns: repeat(2, minmax(310px, 410px));
+            grid-template-columns: repeat(2, minmax(360px, 460px));
             justify-content: center;
-            gap: 3.5rem;
+            gap: 3rem;
         }
 
         .friends-showcase {
@@ -432,6 +433,10 @@
             }
             .personal-grid, .cards-grid, #family .cards-grid {
                 grid-template-columns: 1fr;
+            }
+            #family .card-frame {
+                width: 100%;
+                height: 220px;
             }
             .selfie-frame,
             .friends-slide-card[data-slide="1"] .selfie-frame {
