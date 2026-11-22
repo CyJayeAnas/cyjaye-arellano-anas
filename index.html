@@ -182,7 +182,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: auto;
+            flex-shrink: 0;
         }
 
         .profile-frame-home img {
@@ -271,13 +271,13 @@
             display: block;
         }
 
-        /* SECTION 1: HOMEPAGE (Balanced Gap & Text Spacing Relative to Frame) */
+        /* SECTION 1: HOMEPAGE (Text Seated Directly Next to Frame) */
         .home-container {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            gap: 1.45rem;
+            gap: 1.1rem;
             max-width: 1120px;
             width: 100%;
             margin: 0 auto;
@@ -290,9 +290,8 @@
             align-items: flex-start;
             text-align: left;
             border-left: 3px solid var(--border-color);
-            padding-left: 1.2rem;
+            padding-left: 1.05rem;
             max-width: 410px;
-            margin-right: auto;
         }
 
         .home-eyebrow {
