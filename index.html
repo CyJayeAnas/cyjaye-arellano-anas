@@ -216,33 +216,43 @@
             border-radius: 16px;
         }
 
-        /* Default Friends selfie frame (used by Page 2) */
+        /* Friends selfie frames sized to leave clean room for name labels */
         .selfie-frame {
-            width: min(680px, 78vw);
-            height: min(410px, 52vh);
+            width: fit-content;
+            max-width: 86vw;
+            height: min(370px, 46vh);
             background-color: #f1f5f9;
             border: 2px solid var(--border-color);
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Enlarged Friends Page 1 selfie frame */
         .friends-slide-card[data-slide="1"] .selfie-frame {
-            width: min(880px, 86vw);
-            height: min(490px, 60vh);
+            height: min(430px, 53vh);
         }
 
         .profile-frame-home img,
         .profile-frame-bio img,
         .row-frame img,
-        .card-frame img,
-        .selfie-frame img {
+        .card-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 20%;
+            display: block;
+        }
+
+        /* Preserves full image aspect ratio with zero cropping */
+        .selfie-frame img {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            object-fit: contain;
             display: block;
         }
 
@@ -358,6 +368,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .friends-slide-card {
@@ -366,9 +377,10 @@
             align-items: center;
             text-align: center;
             background: var(--card-bg);
-            padding: 1.1rem 1.35rem;
+            padding: 1rem 1.5rem;
             border: 1px solid rgba(0,0,0,0.08);
             border-radius: 12px;
+            max-width: 960px;
         }
 
         .friends-slide-card.hidden-slide {
@@ -376,16 +388,31 @@
         }
 
         .friends-slide-card h3 {
+            font-family: 'Cinzel', serif;
             font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 0.2rem;
-            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.45rem;
+            font-weight: 600;
         }
 
-        .friends-slide-card p {
-            font-size: 1rem;
+        .friends-names-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem 0.65rem;
+            max-width: 820px;
+        }
+
+        .friends-names-list span {
+            font-size: 0.86rem;
             font-weight: 600;
             color: var(--text-primary);
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.14);
+            padding: 0.22rem 0.65rem;
+            border-radius: 999px;
+            white-space: nowrap;
         }
 
         .card-item {
@@ -441,7 +468,12 @@
             .selfie-frame,
             .friends-slide-card[data-slide="1"] .selfie-frame {
                 width: 100%;
-                height: 240px;
+                height: auto;
+                max-height: 300px;
+            }
+            .selfie-frame img {
+                width: 100%;
+                height: auto;
             }
             .row-item {
                 flex-direction: column;
@@ -665,15 +697,30 @@
                 <div class="selfie-frame">
                     <img src="boyfriend&company(eme).jpeg" alt="Friends Group Selfie 1">
                 </div>
-                <h3>Group Selfie</h3>
-                <p>Friends — Page 1</p>
+                <h3>Pictured With</h3>
+                <div class="friends-names-list">
+                    <span>Kannore Torres</span>
+                    <span>Joaquin Rosano</span>
+                    <span>Spencer Ngooi</span>
+                </div>
             </div>
             <div class="friends-slide-card hidden-slide" data-slide="2">
                 <div class="selfie-frame">
                     <img src="firstcofever.jpeg" alt="Friends Group Selfie 2">
                 </div>
-                <h3>Group Selfie</h3>
-                <p>Friends — Page 2</p>
+                <h3>Pictured With</h3>
+                <div class="friends-names-list">
+                    <span>Sabina Lacyod</span>
+                    <span>Rhyane Paus</span>
+                    <span>Jelian Tubao</span>
+                    <span>Rachelle Punzalan</span>
+                    <span>Rachel Lacbawan</span>
+                    <span>Demi Ree Pit-ong</span>
+                    <span>Estelito Leo</span>
+                    <span>Jennyliza Alwis</span>
+                    <span>Christian Panglao</span>
+                    <span>Ivhanne Dawaten</span>
+                </div>
             </div>
         </div>
         <div class="bottom-nav-controls">
