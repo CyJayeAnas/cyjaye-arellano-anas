@@ -167,7 +167,7 @@
             color: var(--text-secondary);
         }
 
-        /* HOMEPAGE FRAME: Fits 100% of homepage.jpg without cropping inside a compact centered group */
+        /* HOMEPAGE FRAME: Fits 100% of homepage.jpg without cropping, anchored slightly further left */
         .profile-frame-home {
             width: fit-content;
             max-width: min(630px, 50vw);
@@ -182,6 +182,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: auto;
         }
 
         .profile-frame-home img {
@@ -270,17 +271,17 @@
             display: block;
         }
 
-        /* SECTION 1: HOMEPAGE (Tighter Centered Cluster + Larger Typography) */
+        /* SECTION 1: HOMEPAGE (Frame Leaning Slightly Left + Prominent Intro Text) */
         .home-container {
             flex: 1;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 2.25rem;
-            max-width: 1060px;
+            justify-content: flex-start;
+            gap: 2.5rem;
+            max-width: 1120px;
             width: 100%;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem 0 1.25rem;
         }
 
         .home-intro {
@@ -290,7 +291,8 @@
             text-align: left;
             border-left: 3px solid var(--border-color);
             padding-left: 1.75rem;
-            max-width: 390px;
+            max-width: 410px;
+            margin-right: auto;
         }
 
         .home-eyebrow {
@@ -499,10 +501,13 @@
             }
             .home-container {
                 flex-direction: column;
+                justify-content: center;
                 gap: 1.5rem;
+                padding: 0;
                 text-align: center;
             }
             .profile-frame-home {
+                margin-right: 0;
                 max-width: 92vw;
                 max-height: 400px;
             }
@@ -516,6 +521,7 @@
                 border-top: 2px solid var(--border-color);
                 padding-left: 0;
                 padding-top: 1.25rem;
+                margin-right: 0;
                 max-width: 100%;
             }
             .home-eyebrow {
