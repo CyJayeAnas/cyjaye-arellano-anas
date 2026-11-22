@@ -167,30 +167,30 @@
             color: var(--text-secondary);
         }
 
-        /* HOMEPAGE FRAME: Adapts tightly to homepage.jpg's exact aspect ratio so 100% of the image is visible */
+        /* HOMEPAGE FRAME: Fits 100% of homepage.jpg inside a balanced editorial split layout */
         .profile-frame-home {
             width: fit-content;
-            max-width: min(640px, 82vw);
+            max-width: min(560px, 48vw);
             height: auto;
-            max-height: min(440px, 54vh);
-            border-radius: 24px;
-            background-color: #f1f5f9;
+            max-height: min(520px, 66vh);
+            border-radius: 20px;
+            background-color: #ffffff;
             border: 2px solid var(--border-color);
-            padding: 6px;
-            margin-bottom: 1.15rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 7px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            justify-self: end;
         }
 
         .profile-frame-home img {
             width: auto;
             height: auto;
             max-width: 100%;
-            max-height: calc(min(440px, 54vh) - 16px);
-            border-radius: 18px;
+            max-height: calc(min(520px, 66vh) - 18px);
+            border-radius: 13px;
             object-fit: contain;
             display: block;
         }
@@ -271,28 +271,59 @@
             display: block;
         }
 
-        /* SECTION 1: HOMEPAGE */
+        /* SECTION 1: HOMEPAGE (Balanced Two-Column Split) */
         .home-container {
             flex: 1;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3.5rem;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            max-width: 1040px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        .home-container h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.6rem;
+        .home-intro {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            border-left: 2px solid var(--border-color);
+            padding-left: 2.25rem;
+        }
+
+        .home-eyebrow {
+            font-size: 0.78rem;
             font-weight: 600;
-            margin-bottom: 0.3rem;
-            font-style: italic;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
         }
 
-        .home-container p {
-            font-size: 1.05rem;
+        .home-intro h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 0.45rem;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .home-intro p.role-subtitle {
+            font-size: 1.1rem;
+            font-weight: 500;
             color: var(--text-secondary);
+            margin-bottom: 1.4rem;
+        }
+
+        .home-actions {
+            display: flex;
+            gap: 0.85rem;
+            flex-wrap: wrap;
         }
 
         /* SECTION 2: PERSONAL INFORMATION */
@@ -473,12 +504,32 @@
                 overflow: visible;
                 padding: 2rem 5%;
             }
+            .home-container {
+                grid-template-columns: 1fr;
+                gap: 1.75rem;
+                text-align: center;
+            }
             .profile-frame-home {
+                justify-self: center;
                 max-width: 90vw;
                 max-height: 360px;
             }
             .profile-frame-home img {
-                max-height: 344px;
+                max-height: 342px;
+            }
+            .home-intro {
+                align-items: center;
+                text-align: center;
+                border-left: none;
+                border-top: 2px solid var(--border-color);
+                padding-left: 0;
+                padding-top: 1.5rem;
+            }
+            .home-intro h1 {
+                font-size: 2.35rem;
+            }
+            .home-actions {
+                justify-content: center;
             }
             .personal-grid, .cards-grid, #family .cards-grid {
                 grid-template-columns: 1fr;
@@ -528,8 +579,15 @@
             <div class="profile-frame-home">
                 <img src="homepage.jpg" alt="CyJaye Anas">
             </div>
-            <h1>CyJaye Anas</h1>
-            <p>Character Designer</p>
+            <div class="home-intro">
+                <span class="home-eyebrow">Portfolio</span>
+                <h1>CyJaye Anas</h1>
+                <p class="role-subtitle">Character Designer</p>
+                <div class="home-actions">
+                    <button class="corner-nav-btn" onclick="switchPage('personal')">Personal Details &rarr;</button>
+                    <button class="corner-nav-btn" onclick="switchPage('achievements')">Achievements &rarr;</button>
+                </div>
+            </div>
         </div>
         <div class="bottom-nav-controls">
             <span class="page-indicator">01 / 06 — Welcome</span>
