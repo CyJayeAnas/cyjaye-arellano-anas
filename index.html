@@ -167,14 +167,14 @@
             color: var(--text-secondary);
         }
 
-        /* HOMEPAGE FRAME: Slightly larger uncropped frame inside the Personal Details grid */
+        /* HOMEPAGE FRAME: Tall 9:16 vertical portrait frame tailored to homepage(1).jpg */
         .profile-frame-home {
             width: fit-content;
-            max-width: min(580px, 46vw);
+            max-width: min(370px, 34vw);
             height: auto;
-            max-height: min(635px, 78vh);
+            max-height: min(640px, 78vh);
             margin: 0 auto;
-            border-radius: 20px;
+            border-radius: 24px;
             background-color: #ffffff;
             border: 2px solid var(--border-color);
             padding: 7px;
@@ -187,11 +187,11 @@
 
         .profile-frame-home img {
             width: auto;
-            height: auto;
+            height: calc(min(640px, 78vh) - 18px);
             max-width: 100%;
-            max-height: calc(min(635px, 78vh) - 18px);
-            border-radius: 13px;
+            border-radius: 16px;
             object-fit: contain;
+            object-position: center top;
             display: block;
         }
 
@@ -271,15 +271,17 @@
             display: block;
         }
 
-        /* SECTION 1: HOMEPAGE (Mirrors Personal Details Two-Column Grid) */
+        /* SECTION 1: HOMEPAGE (Balanced Two-Column Grid for Tall Portrait) */
         .home-container {
             flex: 1;
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 3rem;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 2.75rem;
             align-items: center;
             overflow: hidden;
             width: 100%;
+            max-width: 1060px;
+            margin: 0 auto;
         }
 
         .home-intro {
@@ -289,7 +291,7 @@
             text-align: left;
             border-left: 2px solid var(--border-color);
             padding-left: 2rem;
-            max-width: 440px;
+            max-width: 460px;
         }
 
         .home-eyebrow {
@@ -502,11 +504,12 @@
                 text-align: center;
             }
             .profile-frame-home {
-                max-width: 92vw;
-                max-height: 430px;
+                max-width: 82vw;
+                max-height: 500px;
             }
             .profile-frame-home img {
-                max-height: 412px;
+                height: auto;
+                max-height: 482px;
             }
             .home-intro {
                 align-items: center;
@@ -572,7 +575,7 @@
     <section id="homepage" class="page-content active">
         <div class="home-container">
             <div class="profile-frame-home">
-                <img src="homepage.jpg" alt="CyJaye Anas">
+                <img src="homepage(1).jpg" alt="CyJaye Anas">
             </div>
             <div class="home-intro">
                 <span class="home-eyebrow">Portfolio</span>
