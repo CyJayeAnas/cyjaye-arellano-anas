@@ -225,10 +225,10 @@
             overflow: hidden;
         }
 
-        /* Wider rectangular Family Backgrounds frames */
+        /* Wider rectangular Family Backgrounds frames sized for 3 columns */
         #family .card-frame {
-            width: min(410px, 44vw);
-            height: min(295px, 36vh);
+            width: min(310px, 26vw);
+            height: min(240px, 32vh);
             border-radius: 16px;
         }
 
@@ -397,9 +397,9 @@
         }
 
         #family .cards-grid {
-            grid-template-columns: repeat(2, minmax(360px, 460px));
+            grid-template-columns: repeat(3, minmax(260px, 360px));
             justify-content: center;
-            gap: 3rem;
+            gap: 1.75rem;
         }
 
         .friends-showcase {
@@ -467,7 +467,9 @@
         }
 
         #family .card-item {
-            padding: 1.25rem 1.5rem;
+            padding: 1.2rem 1.25rem;
+            height: 100%;
+            max-height: fit-content;
         }
 
         .card-item.hidden-slide {
@@ -479,12 +481,14 @@
             font-size: 1.05rem;
             margin-bottom: 0.15rem;
             font-weight: 500;
+            min-height: 1.3em;
         }
 
         .card-item p {
             font-size: 1rem;
             font-weight: 600;
             color: var(--text-primary);
+            min-height: 1.25em;
         }
 
         /* Mobile Fallback */
@@ -753,6 +757,11 @@
                 </div>
                 <h3>Mother</h3>
                 <p>Crisilda A. Anas</p>
+            </div>
+            <div class="card-item">
+                <div class="card-frame"></div>
+                <h3></h3>
+                <p></p>
             </div>
         </div>
         <div class="bottom-nav-controls">
